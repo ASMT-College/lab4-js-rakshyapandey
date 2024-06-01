@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Radio Validation</title>
+    <style>
+        *{
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        form{
+            padding: 30px;
+        }
+        input{
+            width: 350px;
+            margin: 5px 0px 10px 0px;
+            border: 1px solid;
+            padding: 5px;
+            border-radius: 5px;
+        }
+        button{
+            padding: 10px 20px;
+            background-color: #0097A7;
+            color: white;
+            border-radius: 20px;
+        }
+        button:hover{
+            background-color: rgba(0,0,0,0.5);
+        }
+    </style>
+</head>
+<body>
+    <form action="" method="post">
+    <label for="username"> Username: <br>
+        <input type="text" placeholder="Username">
+    </label> <br>
+
+    <label for="password"> Password: <br>
+        <input type="password" placeholder="Password">
+    </label><br>
+
+    <label for="confpassword"> Confirm password: <br>
+        <input type="password" placeholder="Confirm Password">
+    </label> <br>
+
+    <label for="email">Email: <br>
+        <input type="email" placeholder="Email" id="email">
+    </label> <br>
+
+    <label for="Gender">Gender:</label> <br>
+        <input type="radio" name="gender" id="female" value="female">Female <br>
+        <input type="radio" name="gender" id="male" value="male">Male <br>
+        <input type="radio" name="gender" id="others" value="others">Others <br>
+
+    <br>
+
+    <button type="submit" onclick="validate()">Submit</button>
+
+    </form>
+</body>
+<script>
+    function validate(){
+        var f = document.getElementById("female");
+        var m = document.getElementById("male");
+        var o = document.getElementById("others");
+        if(f.checked==true){
+            alert(f.value);
+        }
+        else if(m.checked==true){
+            alert(m.value);
+        }
+        else if(o.checked==true){
+            alert(o.value);
+        }
+        else{
+            alert("Select one of the options.");
+        }
+    }
+</script>
+</html>
